@@ -3,7 +3,7 @@ import csv
 def write_holiday_cities(first_letter):
     list_cities = []
 
-    with open('travel-notes.csv', 'r', newline='') as cvs_file:
+    with open('dz_csv travel.csv', 'r', newline='') as cvs_file:
         reader = csv.reader(cvs_file)
         for row in reader:
             list_cities.append(row)
@@ -27,7 +27,7 @@ def write_holiday_cities(first_letter):
     print(f'Никогда не были в: {never_visited_cities}')
     first_city_to_visit = sorted(never_visited_cities)[0] if never_visited_cities else 'None'
     print(f'Следующим городом будет: {first_city_to_visit}')
-    with open('holiday.csv', mode='w', newline='', encoding='utf-8') as file:
+    with open('dz_csv holiday.csv', mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         for name, visited_cities, wanted_cities in sorting:
             writer.writerow([name, visited_cities, wanted_cities, list(never_visited_cities), first_city_to_visit])
